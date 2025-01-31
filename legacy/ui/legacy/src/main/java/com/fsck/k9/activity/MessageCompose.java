@@ -1,6 +1,6 @@
 package com.fsck.k9.activity;
 
-
+import android.Manifest;
 import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
@@ -9,7 +9,9 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
 
+import android.Manifest.permission;
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.Context;
@@ -18,12 +20,15 @@ import android.content.Intent;
 import android.content.IntentSender;
 import android.content.IntentSender.SendIntentException;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
+import android.provider.MediaStore;
 import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.ContextThemeWrapper;
@@ -46,6 +51,8 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.core.content.IntentCompat;
 import androidx.core.os.BundleCompat;
 import app.k9mail.core.ui.legacy.designsystem.atom.icon.Icons;
@@ -112,6 +119,7 @@ import app.k9mail.legacy.search.LocalSearch;
 import com.fsck.k9.ui.R;
 import com.fsck.k9.ui.base.K9Activity;
 import app.k9mail.legacy.ui.theme.ThemeManager;
+import com.fsck.k9.ui.base.loader.LoaderState.Data;
 import com.fsck.k9.ui.compose.QuotedMessageMvpView;
 import com.fsck.k9.ui.compose.QuotedMessagePresenter;
 import com.fsck.k9.ui.compose.WrapUriTextWatcher;
@@ -175,6 +183,10 @@ public class MessageCompose extends K9Activity implements OnClickListener,
     private static final int REQUEST_MASK_LOADER_HELPER = (1 << 9);
     private static final int REQUEST_MASK_ATTACHMENT_PRESENTER = (1 << 10);
     private static final int REQUEST_MASK_MESSAGE_BUILDER = (1 << 11);
+
+    private static final int CAMERA_PERMISSION_REQUEST_CODE = 100;
+    private static final int REQUEST_IMAGE_CAPTURE = 6;
+
 
     /**
      * Regular expression to remove the first localized "Re:" prefix in subjects.
@@ -879,9 +891,25 @@ public class MessageCompose extends K9Activity implements OnClickListener,
                 attachmentPresenter.onActivityResult(resultCode, requestCode, data);
                 return;
             }
+
+            if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
+                Bundle extras = data.getExtras();
+                Data imageData = (Data) extras.get("data");
+            }
         }
 
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults,
+        int deviceId) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults, deviceId);
+        if(requestCode == CAMERA_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                openCamera();
+            }
+        }
     }
 
     private void onAccountChosen(Account account, Identity identity) {
@@ -1005,6 +1033,22 @@ public class MessageCompose extends K9Activity implements OnClickListener,
         }
     }
 
+    private void openCamera() {
+        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+    private Boolean hasCameraPermission()  {
+        int hasPermission = ContextCompat.checkSelfPermission(this, permission.CAMERA);
+        return hasPermission == PackageManager.PERMISSION_GRANTED;
+    }
+
+    private void requestCameraPermission() {
+        ActivityCompat.requestPermissions(this, new String[] { permission.CAMERA }, CAMERA_PERMISSION_REQUEST_CODE);
+    }
+
     private void showPopupMenu(View view) {
         PopupMenu popup = new PopupMenu(this, view);
         MenuInflater inflater = popup.getMenuInflater();
@@ -1022,6 +1066,11 @@ public class MessageCompose extends K9Activity implements OnClickListener,
         popup.setOnMenuItemClickListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.open_camera) {
+                if(!hasCameraPermission()){
+                    requestCameraPermission();
+                }else {
+                    openCamera();
+                }
                 return true;
             } else if (itemId == R.id.attach_file) {
                 attachmentPresenter.onClickAddAttachment(recipientPresenter);
