@@ -56,6 +56,8 @@
     <string name="folders_action">Spravovať priečinky</string>
     <string name="account_settings_action">Nastavenia účtu</string>
     <string name="remove_account_action">Odstrániť účet</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Označiť ako prečítané</string>
     <string name="send_alternate_action">Zdieľať</string>
     <string name="send_alternate_chooser_title">Vybrať odosielateľa</string>

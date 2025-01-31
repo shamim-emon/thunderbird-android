@@ -65,6 +65,8 @@
     <string name="folders_action">管理文件夹</string>
     <string name="account_settings_action">账号设置</string>
     <string name="remove_account_action">移除账号</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">标记为已读</string>
     <string name="send_alternate_action">分享</string>
     <string name="send_alternate_chooser_title">选择发件人</string>

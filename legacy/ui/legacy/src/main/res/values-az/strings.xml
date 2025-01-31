@@ -122,6 +122,8 @@
     <string name="search_results">Axtarış nəticələri</string>
     <string name="new_messages_title">Yeni mesaj</string>
     <string name="remove_account_action">Hesabı sil</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Oxunmuş olaraq işarələ</string>
     <string name="send_alternate_action">Paylaş</string>
     <string name="send_alternate_chooser_title">Göndəricini seç</string>

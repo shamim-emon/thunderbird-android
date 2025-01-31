@@ -65,6 +65,8 @@
     <string name="folders_action">Gestione cartelle</string>
     <string name="account_settings_action">Impostazioni account</string>
     <string name="remove_account_action">Rimuovi account</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Segna come letto</string>
     <string name="send_alternate_action">Condividi</string>
     <string name="send_alternate_chooser_title">Scegli mittente</string>

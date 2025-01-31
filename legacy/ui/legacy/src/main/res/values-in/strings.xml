@@ -58,6 +58,8 @@
     <string name="folders_action">Kelola folder</string>
     <string name="account_settings_action">Pengaturan akun</string>
     <string name="remove_account_action">Hapus akun</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Tandai sudah dibaca</string>
     <string name="send_alternate_action">Bagikan</string>
     <string name="send_alternate_chooser_title">Pilih pengirim</string>

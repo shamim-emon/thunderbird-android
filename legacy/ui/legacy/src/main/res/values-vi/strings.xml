@@ -65,6 +65,8 @@
     <string name="folders_action">Quản lý thư mục</string>
     <string name="account_settings_action">Thiết đặt tài khoản thư</string>
     <string name="remove_account_action">Loại bỏ tài khoản</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Đánh dấu đã đọc</string>
     <string name="send_alternate_action">Chia sẻ</string>
     <string name="send_alternate_chooser_title">Chọn người gửi</string>

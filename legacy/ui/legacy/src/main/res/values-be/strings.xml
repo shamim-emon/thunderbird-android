@@ -65,6 +65,8 @@
     <string name="folders_action">Кіраванне каталогамі</string>
     <string name="account_settings_action">Налады акаўнта</string>
     <string name="remove_account_action">Выдаліць акаўнт</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Пазначыць як прачытанае</string>
     <string name="send_alternate_action">Падзяліцца</string>
     <string name="send_alternate_chooser_title">Абраць адпраўніка</string>

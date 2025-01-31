@@ -63,6 +63,8 @@
     <string name="folders_action">ഫോൾഡറുകൾ നിയന്ത്രിക്കുക</string>
     <string name="account_settings_action">അക്കൗണ്ട് സജ്ജീകരണങ്ങൾ</string>
     <string name="remove_account_action">അക്കൗണ്ട് നീക്കംചെയ്യുക</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">വായിച്ചതായി അടയാളപ്പെടുത്തുക</string>
     <string name="send_alternate_action">പങ്കിടുക</string>
     <string name="send_alternate_chooser_title">പ്രേക്ഷകനെ തിരഞ്ഞെടുക്കുക</string>

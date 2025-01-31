@@ -139,6 +139,8 @@
     <string name="copy_action">Copy</string>
     <string name="choose_folder_copy_title">Copy to…</string>
     <string name="remove_account_action">Remove account</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="about_app_authors_k9">The K-9 Dog Walkers</string>
     <string name="reply_action">Reply</string>
     <string name="show_headers_action">Show headers</string>

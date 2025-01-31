@@ -62,6 +62,8 @@
     <string name="folders_action">Administri mesaĝujojn</string>
     <string name="account_settings_action">Agordoj de konto</string>
     <string name="remove_account_action">Forigi konton</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Marki kiel legitan</string>
     <string name="send_alternate_action">Kunhavigi</string>
     <string name="send_alternate_chooser_title">Elekti sendanton</string>

@@ -65,6 +65,8 @@
     <string name="folders_action">Керувати теками</string>
     <string name="account_settings_action">Налаштування облікового запису</string>
     <string name="remove_account_action">Вилучити обліковий запис</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Позначити прочитаним</string>
     <string name="send_alternate_action">Поділитися</string>
     <string name="send_alternate_chooser_title">Вибрати відправника</string>

@@ -65,6 +65,8 @@
     <string name="folders_action">Gestioneu les carpetes</string>
     <string name="account_settings_action">Configuració del compte</string>
     <string name="remove_account_action">Suprimeix el compte</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Marca com a llegit</string>
     <string name="send_alternate_action">Comparteix</string>
     <string name="send_alternate_chooser_title">Selecciona remitent</string>

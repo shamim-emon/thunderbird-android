@@ -66,6 +66,8 @@
     <string name="folders_action">Zarządzaj folderami</string>
     <string name="account_settings_action">Ustawienia konta</string>
     <string name="remove_account_action">Usuń konto</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Oznacz jako przeczytane</string>
     <string name="send_alternate_action">Udostępnij</string>
     <string name="send_alternate_chooser_title">Wybierz nadawcę</string>

@@ -65,6 +65,8 @@
     <string name="folders_action">Выбрать папки</string>
     <string name="account_settings_action">Настройки учётной записи</string>
     <string name="remove_account_action">Удалить учётную запись</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Прочитано</string>
     <string name="send_alternate_action">Передать</string>
     <string name="send_alternate_chooser_title">Выбрать отправителя</string>

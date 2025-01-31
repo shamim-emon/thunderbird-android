@@ -58,6 +58,8 @@
     <string name="folders_action">Stiùirich na pasganan</string>
     <string name="account_settings_action">Roghainnean a’ chunntais</string>
     <string name="remove_account_action">Thoir an cunntas air falbh</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Comharraich gun deach a leughadh</string>
     <string name="send_alternate_action">Co-roinn</string>
     <string name="send_alternate_chooser_title">Tagh seòladair</string>

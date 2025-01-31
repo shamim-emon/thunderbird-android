@@ -63,6 +63,8 @@
     <string name="folders_action">Управление на папки</string>
     <string name="account_settings_action">Настройки на профила</string>
     <string name="remove_account_action">Премахване на профил</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Маркирай като прочетено</string>
     <string name="send_alternate_action">Сподели</string>
     <string name="send_alternate_chooser_title">Избери изпращащ</string>

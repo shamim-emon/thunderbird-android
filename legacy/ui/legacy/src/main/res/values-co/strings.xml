@@ -217,6 +217,8 @@
     <string name="error_crypto_inline_attach">U modu PGP/INLINE ùn accetteghja micca e pezze ghjunte !</string>
     <string name="account_settings_action">Parametri di u contu</string>
     <string name="remove_account_action">Caccià u contu</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Marcà cum’è lettu</string>
     <string name="send_alternate_action">Sparte</string>
     <plurals name="copy_address_to_clipboard">

@@ -64,6 +64,8 @@
     <string name="folders_action">Upravljanje z mapami</string>
     <string name="account_settings_action">Nastavitve računa</string>
     <string name="remove_account_action">Odstrani račun</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Označi kot prebrano</string>
     <string name="send_alternate_action">Deli</string>
     <string name="send_alternate_chooser_title">Izberi pošiljatelja</string>

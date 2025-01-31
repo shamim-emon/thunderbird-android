@@ -40,6 +40,8 @@
     <string name="search_results">Փնտրման արդիւնքները</string>
     <string name="account_settings_action">Հաշուի կագրաւորումներ</string>
     <string name="remove_account_action">Հեռացնել հաշիւը</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Նշել որպէս ընթերցուած</string>
     <string name="send_alternate_action">Տարածել</string>
     <string name="send_alternate_chooser_title">Ընտրել ուղարկողին</string>

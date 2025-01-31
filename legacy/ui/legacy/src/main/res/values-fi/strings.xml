@@ -65,6 +65,8 @@
     <string name="folders_action">Hallitse kansioita</string>
     <string name="account_settings_action">Tilin asetukset</string>
     <string name="remove_account_action">Poista tili</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Merkitse luetuksi</string>
     <string name="send_alternate_action">Jaa</string>
     <string name="send_alternate_chooser_title">Valitse lähettäjä</string>

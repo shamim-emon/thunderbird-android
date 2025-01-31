@@ -65,6 +65,8 @@
     <string name="folders_action">Gerenciar pastas</string>
     <string name="account_settings_action">Configurações da conta</string>
     <string name="remove_account_action">Remover a conta</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Marcar como lida</string>
     <string name="send_alternate_action">Compartilhar</string>
     <string name="send_alternate_chooser_title">Escolher o remetente</string>

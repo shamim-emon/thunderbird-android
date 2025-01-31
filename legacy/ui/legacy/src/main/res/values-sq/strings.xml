@@ -65,6 +65,8 @@
     <string name="folders_action">Administroni dosje</string>
     <string name="account_settings_action">Rregullime llogarie</string>
     <string name="remove_account_action">Hiqe llogarinë</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Vëri shenjë si të lexuar</string>
     <string name="send_alternate_action">Ndajeni me të tjerë</string>
     <string name="send_alternate_chooser_title">Zgjidhni dërgues</string>

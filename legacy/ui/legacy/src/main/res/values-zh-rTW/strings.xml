@@ -65,6 +65,8 @@
     <string name="folders_action">整理信件匣</string>
     <string name="account_settings_action">帳號設定</string>
     <string name="remove_account_action">刪除帳號</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">標記為已讀</string>
     <string name="send_alternate_action">分享</string>
     <string name="send_alternate_chooser_title">選擇寄件人</string>

@@ -65,6 +65,8 @@
     <string name="folders_action">إدارة المجلدات</string>
     <string name="account_settings_action">إعدادات الحساب</string>
     <string name="remove_account_action">احذف الحساب</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">علامة مقروء</string>
     <string name="send_alternate_action">شارك</string>
     <string name="send_alternate_chooser_title">اختر المُرسِل</string>

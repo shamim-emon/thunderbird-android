@@ -65,6 +65,8 @@
     <string name="folders_action">Διαχείριση φακέλων</string>
     <string name="account_settings_action">Ρυθμίσεις λογαριασμού</string>
     <string name="remove_account_action">Διαγραφή λογαριασμού</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Σήμανση ως αναγνωσμένου</string>
     <string name="send_alternate_action">Κοινοποίηση</string>
     <string name="send_alternate_chooser_title">Επιλογή αποστολέα</string>

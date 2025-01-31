@@ -57,6 +57,8 @@
     <string name="folders_action">נהל תיקיות</string>
     <string name="account_settings_action">הגדרות חשבון</string>
     <string name="remove_account_action">מחק חשבון</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">סמן כנקרא</string>
     <string name="send_alternate_action">שתף</string>
     <string name="send_alternate_chooser_title">בחר שולח</string>

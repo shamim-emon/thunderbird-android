@@ -65,6 +65,8 @@
     <string name="folders_action">Håndtér mapper</string>
     <string name="account_settings_action">Kontoindstillinger</string>
     <string name="remove_account_action">Slet konto</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Markér som læst</string>
     <string name="send_alternate_action">Del</string>
     <string name="send_alternate_chooser_title">Vælg afsender</string>

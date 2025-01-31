@@ -65,6 +65,8 @@
     <string name="folders_action">Mappák kezelése</string>
     <string name="account_settings_action">Fiók beállításai</string>
     <string name="remove_account_action">Fiók eltávolítása</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Megjelölés olvasottként</string>
     <string name="send_alternate_action">Megosztás</string>
     <string name="send_alternate_chooser_title">Feladó kiválasztása</string>

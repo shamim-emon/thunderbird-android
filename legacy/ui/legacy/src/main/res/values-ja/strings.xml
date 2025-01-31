@@ -66,6 +66,8 @@
     <string name="folders_action">フォルダーを管理</string>
     <string name="account_settings_action">アカウント設定</string>
     <string name="remove_account_action">アカウントを削除</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">既読にする</string>
     <string name="send_alternate_action">共有</string>
     <string name="send_alternate_chooser_title">アプリケーションを選択</string>

@@ -65,6 +65,8 @@
     <string name="folders_action">مدیریت پوشه‌ها</string>
     <string name="account_settings_action">تنظیمات حساب</string>
     <string name="remove_account_action">حذف حساب</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">خوانده شد</string>
     <string name="send_alternate_action">اشتراک‌گذاری</string>
     <string name="send_alternate_chooser_title">انتخاب فرستنده</string>

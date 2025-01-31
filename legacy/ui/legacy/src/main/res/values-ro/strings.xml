@@ -65,6 +65,8 @@
     <string name="folders_action">Gestionează dosarele</string>
     <string name="account_settings_action">Opțiuni cont</string>
     <string name="remove_account_action">Șterge contul</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Marchează ca citit</string>
     <string name="send_alternate_action">Distribuie</string>
     <string name="send_alternate_chooser_title">Alege expeditorul</string>

@@ -65,6 +65,8 @@
     <string name="folders_action">Mappen beheren</string>
     <string name="account_settings_action">Accountinstellingen</string>
     <string name="remove_account_action">Account verwijderen</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Als gelezen markeren</string>
     <string name="send_alternate_action">Delen</string>
     <string name="send_alternate_chooser_title">Kies afzender</string>

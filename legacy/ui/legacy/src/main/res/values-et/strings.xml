@@ -65,6 +65,8 @@
     <string name="folders_action">Halda kaustu</string>
     <string name="account_settings_action">Konto sätted</string>
     <string name="remove_account_action">Eemalda konto</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Märgi loetuks</string>
     <string name="send_alternate_action">Jaga</string>
     <string name="send_alternate_chooser_title">Vali saatja</string>

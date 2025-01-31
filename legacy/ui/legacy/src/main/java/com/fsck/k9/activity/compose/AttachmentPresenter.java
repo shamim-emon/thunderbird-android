@@ -136,6 +136,7 @@ public class AttachmentPresenter {
     }
 
     public void onClickAddAttachment(RecipientPresenter recipientPresenter) {
+
         ComposeCryptoStatus currentCachedCryptoStatus = recipientPresenter.getCurrentCachedCryptoStatus();
         if (currentCachedCryptoStatus == null) {
             return;

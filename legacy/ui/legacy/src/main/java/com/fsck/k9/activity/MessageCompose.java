@@ -29,6 +29,7 @@ import android.text.TextWatcher;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -44,6 +45,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.widget.PopupMenu;
 import androidx.core.content.IntentCompat;
 import androidx.core.os.BundleCompat;
 import app.k9mail.core.ui.legacy.designsystem.atom.icon.Icons;
@@ -116,6 +118,8 @@ import com.fsck.k9.ui.compose.WrapUriTextWatcher;
 import com.fsck.k9.ui.helper.SizeFormatter;
 import com.fsck.k9.ui.messagelist.DefaultFolderProvider;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.shape.MaterialShapeDrawable;
+import com.google.android.material.shape.ShapeAppearanceModel;
 import com.google.android.material.textview.MaterialTextView;
 import org.openintents.openpgp.OpenPgpApiManager;
 import org.openintents.openpgp.util.OpenPgpApi;
@@ -1001,6 +1005,33 @@ public class MessageCompose extends K9Activity implements OnClickListener,
         }
     }
 
+    private void showPopupMenu(View view) {
+        PopupMenu popup = new PopupMenu(this, view);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.message_attachment_option, popup.getMenu());
+
+        // Set Material 3 Style
+        MaterialShapeDrawable background = new MaterialShapeDrawable();
+        background.setShapeAppearanceModel(
+            ShapeAppearanceModel.builder()
+                .setAllCornerSizes(20f)
+                .build()
+        );
+
+        popup.getMenu().setGroupCheckable(0, false, false);
+        popup.setOnMenuItemClickListener(item -> {
+            int itemId = item.getItemId();
+            if (itemId == R.id.open_camera) {
+                return true;
+            } else if (itemId == R.id.attach_file) {
+                attachmentPresenter.onClickAddAttachment(recipientPresenter);
+                return true;
+            }
+            return false;
+        });
+        popup.show();
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -1031,7 +1062,8 @@ public class MessageCompose extends K9Activity implements OnClickListener,
         } else if (id == R.id.openpgp_sign_only_disable) {
             recipientPresenter.onMenuSetSignOnly(false);
         } else if (id == R.id.add_attachment) {
-            attachmentPresenter.onClickAddAttachment(recipientPresenter);
+            View attachmentMenuAnchor = findViewById(com.fsck.k9.ui.base.R.id.toolbar).findViewById(R.id.add_attachment);
+            showPopupMenu(attachmentMenuAnchor);
         } else if (id == R.id.read_receipt) {
             onReadReceipt();
         } else {

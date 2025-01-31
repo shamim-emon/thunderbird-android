@@ -64,6 +64,8 @@
     <string name="folders_action">Klasörleri yönet</string>
     <string name="account_settings_action">Hesap ayarları</string>
     <string name="remove_account_action">Hesabı kaldır</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Okundu olarak işaretle</string>
     <string name="send_alternate_action">Paylaş</string>
     <string name="send_alternate_chooser_title">Gönderici seç</string>

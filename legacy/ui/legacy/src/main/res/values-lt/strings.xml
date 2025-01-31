@@ -64,6 +64,8 @@
     <string name="folders_action">Tvarkyti aplankus</string>
     <string name="account_settings_action">Paskyros nustatymai</string>
     <string name="remove_account_action">Pašalinti paskyrą</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Žymėti kaip skaitytą</string>
     <string name="send_alternate_action">Bendrinti</string>
     <string name="send_alternate_chooser_title">Pasirinkti siuntėją</string>

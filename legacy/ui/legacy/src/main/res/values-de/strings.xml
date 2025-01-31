@@ -64,6 +64,8 @@
     <string name="folders_action">Ordner verwalten</string>
     <string name="account_settings_action">Kontoeinstellungen</string>
     <string name="remove_account_action">Konto entfernen</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Als gelesen markieren</string>
     <string name="send_alternate_action">Teilen</string>
     <string name="send_alternate_chooser_title">Absender auswählen</string>

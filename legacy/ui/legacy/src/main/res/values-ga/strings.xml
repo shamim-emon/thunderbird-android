@@ -16,6 +16,8 @@
     <string name="compose_action">Cumadóirí</string>
     <string name="search_action">Cuardaigh</string>
     <string name="remove_account_action">Bain cuntas</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Marcáil mar léite</string>
     <plurals name="copy_address_to_clipboard">
         <item quantity="one">Cóipeáladh an seoladh chuig an ngearrthaisce</item>

@@ -105,6 +105,8 @@
     <string name="compose_action">Sastavi</string>
     <string name="account_settings_action">Postavke računa</string>
     <string name="remove_account_action">Obriši račun</string>
+    <string name="open_camera">Open Camera</string>
+    <string name="attach_file">Attach File</string>
     <string name="mark_as_read_action">Označi pročitanim</string>
     <string name="send_alternate_chooser_title">Odaberi pošiljatelja</string>
     <string name="flag_action">Dodaj zvjezdicu</string>
