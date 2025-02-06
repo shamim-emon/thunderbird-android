@@ -1,6 +1,6 @@
 package com.fsck.k9.activity;
 
-import android.Manifest;
+
 import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
@@ -21,7 +21,6 @@ import android.content.IntentSender;
 import android.content.IntentSender.SendIntentException;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.nfc.NfcAdapter;
 import android.os.AsyncTask;
@@ -56,12 +55,17 @@ import androidx.core.content.ContextCompat;
 import androidx.core.content.IntentCompat;
 import androidx.core.os.BundleCompat;
 import app.k9mail.core.ui.legacy.designsystem.atom.icon.Icons;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import app.k9mail.legacy.account.Account;
 import app.k9mail.legacy.account.Account.MessageFormat;
-import app.k9mail.legacy.di.DI;
 import app.k9mail.legacy.account.Identity;
+import app.k9mail.legacy.di.DI;
+import app.k9mail.legacy.message.controller.MessageReference;
+import app.k9mail.legacy.message.controller.MessagingListener;
+import app.k9mail.legacy.message.controller.SimpleMessagingListener;
+import app.k9mail.legacy.search.LocalSearch;
+import app.k9mail.legacy.ui.theme.ThemeManager;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.fsck.k9.K9;
 import com.fsck.k9.Preferences;
 import com.fsck.k9.activity.MessageLoaderHelper.MessageLoaderCallbacks;
@@ -83,10 +87,7 @@ import com.fsck.k9.activity.compose.SaveMessageTask;
 import com.fsck.k9.activity.misc.Attachment;
 import com.fsck.k9.autocrypt.AutocryptDraftStateHeaderParser;
 import com.fsck.k9.contact.ContactIntentHelper;
-import app.k9mail.legacy.message.controller.MessageReference;
 import com.fsck.k9.controller.MessagingController;
-import app.k9mail.legacy.message.controller.MessagingListener;
-import app.k9mail.legacy.message.controller.SimpleMessagingListener;
 import com.fsck.k9.fragment.AttachmentDownloadDialogFragment;
 import com.fsck.k9.fragment.AttachmentDownloadDialogFragment.AttachmentDownloadCancelListener;
 import com.fsck.k9.fragment.ProgressDialogFragment;
@@ -115,11 +116,8 @@ import com.fsck.k9.message.PgpMessageBuilder;
 import com.fsck.k9.message.QuotedTextMode;
 import com.fsck.k9.message.SimpleMessageBuilder;
 import com.fsck.k9.message.SimpleMessageFormat;
-import app.k9mail.legacy.search.LocalSearch;
 import com.fsck.k9.ui.R;
 import com.fsck.k9.ui.base.K9Activity;
-import app.k9mail.legacy.ui.theme.ThemeManager;
-import com.fsck.k9.ui.base.loader.LoaderState.Data;
 import com.fsck.k9.ui.compose.QuotedMessageMvpView;
 import com.fsck.k9.ui.compose.QuotedMessagePresenter;
 import com.fsck.k9.ui.compose.WrapUriTextWatcher;
@@ -187,6 +185,8 @@ public class MessageCompose extends K9Activity implements OnClickListener,
     private static final int CAMERA_PERMISSION_REQUEST_CODE = 100;
     private static final int REQUEST_IMAGE_CAPTURE = 6;
 
+    private Uri photoUri;
+
 
     /**
      * Regular expression to remove the first localized "Re:" prefix in subjects.
@@ -202,6 +202,8 @@ public class MessageCompose extends K9Activity implements OnClickListener,
     private final Preferences preferences = DI.get(Preferences.class);
 
     private final Contacts contacts = DI.get(Contacts.class);
+
+    private CaptureImageFileWriter captureImageFileWriter;
 
     private QuotedMessagePresenter quotedMessagePresenter;
     private MessageLoaderHelper messageLoaderHelper;
@@ -337,6 +339,8 @@ public class MessageCompose extends K9Activity implements OnClickListener,
 
         EditText upperSignature = findViewById(R.id.upper_signature);
         EditText lowerSignature = findViewById(R.id.lower_signature);
+
+        captureImageFileWriter = new CaptureImageFileWriter(this);
 
         QuotedMessageMvpView quotedMessageMvpView = new QuotedMessageMvpView(this);
         quotedMessagePresenter = new QuotedMessagePresenter(this, quotedMessageMvpView, account);
@@ -893,8 +897,11 @@ public class MessageCompose extends K9Activity implements OnClickListener,
             }
 
             if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == Activity.RESULT_OK) {
-                Bundle extras = data.getExtras();
-                Data imageData = (Data) extras.get("data");
+                Intent intent = new Intent();
+                intent.setData(photoUri);
+                attachmentPresenter.onActivityResult(resultCode, 1, intent);
+
+
             }
         }
 
@@ -1036,6 +1043,8 @@ public class MessageCompose extends K9Activity implements OnClickListener,
     private void openCamera() {
         Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         if (intent.resolveActivity(getPackageManager()) != null) {
+            photoUri = captureImageFileWriter.getFileUri();
+            intent.putExtra(MediaStore.EXTRA_OUTPUT, photoUri);
             startActivityForResult(intent, REQUEST_IMAGE_CAPTURE);
         }
     }

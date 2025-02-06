@@ -8,6 +8,17 @@
     <application
         android:supportsRtl="true"
         >
+        <provider
+            android:name="com.fsck.k9.activity.CaptureImageFileProvider"
+            android:authorities="${applicationId}.activity"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            >
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/capture_image_file_provider_paths"
+                />
+        </provider>
 
     </application>
 
