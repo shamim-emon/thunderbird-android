@@ -218,14 +218,14 @@ jobs:
         shell: bash
         run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
 
-      - uses: actions/setup-java@7a6d8a8234af8eb26422e24e3006232cccaa061b # v4.6.0
+      - uses: actions/setup-java@3a4f6e1af504cf6a31855fa899c6aa5355ba6c12 # v4.7.0
         if: ${{ contains(matrix.releaseTarget, 'github') || needs.dump_config.outputs.releaseType == 'daily' }}
         with:
           distribution: 'temurin'
           java-version: '17'
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@0bdd871935719febd78681f197cd39af5b6e16a6 # v4.2.2
+        uses: gradle/actions/setup-gradle@94baf225fe0a508e581a564467443d0e2379123b # v4.3.0
         if: ${{ contains(matrix.releaseTarget, 'github') || needs.dump_config.outputs.releaseType == 'daily' }}
         with:
           cache-disabled: "${{ contains(fromJSON('[\"beta\", \"release\"]'), needs.dump_config.outputs.releaseType) }}"
@@ -460,13 +460,13 @@ jobs:
         shell: bash
         run: mkdir -p ~/.gradle ; cp .github/ci-gradle.properties ~/.gradle/gradle.properties
 
-      - uses: actions/setup-java@7a6d8a8234af8eb26422e24e3006232cccaa061b # v4.6.0
+      - uses: actions/setup-java@3a4f6e1af504cf6a31855fa899c6aa5355ba6c12 # v4.7.0
         with:
           distribution: 'temurin'
           java-version: '17'
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@0bdd871935719febd78681f197cd39af5b6e16a6 # v4.2.2
+        uses: gradle/actions/setup-gradle@94baf225fe0a508e581a564467443d0e2379123b # v4.3.0
         with:
           cache-disabled: "${{ contains(fromJSON('[\"beta\", \"release\"]'), needs.dump_config.outputs.releaseType) }}"
           add-job-summary: on-failure
@@ -751,7 +751,7 @@ jobs:
           ls -l uploads/${PKG_FILE_PRETTY}
 
       - name: App Token Generate
-        uses: actions/create-github-app-token@c1a285145b9d317df6ced56c09f525b5c2b6f755 # v1.11.1
+        uses: actions/create-github-app-token@136412a57a7081aa63c935a2cc2918f76c34f514 # v1.11.2
         if: ${{ contains(matrix.releaseTarget, 'github') && vars.RELEASER_APP_CLIENT_ID }}
         id: app-token
         with:
@@ -899,7 +899,7 @@ jobs:
 
       - name: Auth to GCS for FTP
         if: ${{ !inputs.skipFtp && contains(matrix.releaseTarget, 'ftp') && matrix.packageFormat == 'apk' }}
-        uses: google-github-actions/auth@6fc4af4b145ae7821d527454aa9bd537d1f2dc5f # v2.1.7
+        uses: google-github-actions/auth@71f986410dfbc7added4569d411d040a91dc6935 # v2.1.8
         with:
           service_account: ${{ steps.prepare_ftp.outputs.SERVICE_ACCOUNT }}
           workload_identity_provider: ${{ steps.prepare_ftp.outputs.WORKLOAD_IDENTITY_PROVIDER }}
