@@ -2,6 +2,7 @@ package com.fsck.k9.ui.messagelist.item
 
 import android.content.Context
 import androidx.compose.ui.platform.ComposeView
+import coil3.ImageLoader
 import com.fsck.k9.ui.messagelist.MessageListAppearance
 import com.fsck.k9.ui.messagelist.MessageListItem
 import net.thunderbird.core.ui.theme.api.FeatureThemeProvider
@@ -9,6 +10,7 @@ import net.thunderbird.core.ui.theme.api.FeatureThemeProvider
 /**
  * A composable view holder for message list items.
  */
+@Suppress("LongParameterList")
 class ComposableMessageViewHolder(
     private val composeView: ComposeView,
     private val themeProvider: FeatureThemeProvider,
@@ -17,6 +19,7 @@ class ComposableMessageViewHolder(
     private val onAvatarClick: (MessageListItem) -> Unit,
     private val onFavouriteClick: (MessageListItem) -> Unit,
     private val appearance: MessageListAppearance,
+    private val imageLoader: ImageLoader,
 ) : MessageListViewHolder(composeView) {
 
     var uniqueId: Long = -1L
@@ -35,13 +38,14 @@ class ComposableMessageViewHolder(
                     onAvatarClick = { onAvatarClick(item) },
                     onFavouriteClick = { onFavouriteClick(item) },
                     appearance = appearance,
+                    imageLoader = imageLoader,
                 )
             }
         }
     }
 
     companion object {
-
+        @Suppress("LongParameterList")
         fun create(
             context: Context,
             themeProvider: FeatureThemeProvider,
@@ -50,6 +54,7 @@ class ComposableMessageViewHolder(
             onFavouriteClick: (MessageListItem) -> Unit,
             onAvatarClick: (MessageListItem) -> Unit,
             appearance: MessageListAppearance,
+            imageLoader: ImageLoader,
         ): ComposableMessageViewHolder {
             val composeView = ComposeView(context)
 
@@ -61,6 +66,7 @@ class ComposableMessageViewHolder(
                 onAvatarClick = onAvatarClick,
                 onFavouriteClick = onFavouriteClick,
                 appearance = appearance,
+                imageLoader = imageLoader,
             )
 
             composeView.tag = holder

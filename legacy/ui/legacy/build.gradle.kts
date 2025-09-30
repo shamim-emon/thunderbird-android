@@ -37,6 +37,14 @@ dependencies {
 
     implementation(projects.plugins.openpgpApiLib.openpgpApi)
 
+    // Landscapist imports a lot of dependencies that we don't need. We exclude them here.
+    implementation(libs.lanscapist.coil) {
+        exclude(group = "io.coil-kt", module = "coil-gif")
+        exclude(group = "io.coil-kt", module = "coil-video")
+        exclude(group = "io.coil-kt.coil3", module = "coil-network-ktor3")
+        exclude(group = "io.ktor")
+    }
+
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.preference)
     implementation(libs.preferencex)

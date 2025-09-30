@@ -40,6 +40,7 @@ import app.k9mail.legacy.message.controller.SimpleMessagingListener
 import app.k9mail.legacy.ui.folder.FolderNameFormatter
 import app.k9mail.ui.utils.itemtouchhelper.ItemTouchHelper
 import app.k9mail.ui.utils.linearlayoutmanager.LinearLayoutManager
+import coil3.ImageLoader
 import com.fsck.k9.K9
 import com.fsck.k9.Preferences
 import com.fsck.k9.activity.FolderInfoHolder
@@ -133,6 +134,7 @@ class MessageListFragment :
     private val clock: Clock by inject()
     private val setupArchiveFolderDialogFragmentFactory: SetupArchiveFolderDialogFragmentFactory by inject()
     private val preferences: Preferences by inject()
+    private val imageLoader: ImageLoader by inject()
     private val buildSwipeActions: DomainContract.UseCase.BuildSwipeActions<LegacyAccount> by inject {
         parametersOf(preferences.storage)
     }
@@ -348,6 +350,7 @@ class MessageListFragment :
             relativeDateTimeFormatter = RelativeDateTimeFormatter(requireContext(), clock),
             themeProvider = featureThemeProvider,
             featureFlagProvider = featureFlagProvider,
+            imageLoader = imageLoader,
         ).apply {
             activeMessage = this@MessageListFragment.activeMessage
         }

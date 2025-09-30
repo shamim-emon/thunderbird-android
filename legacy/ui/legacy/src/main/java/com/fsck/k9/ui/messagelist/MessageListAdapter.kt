@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView
 import app.k9mail.feature.launcher.FeatureLauncherActivity
 import app.k9mail.feature.launcher.FeatureLauncherTarget
 import app.k9mail.legacy.message.controller.MessageReference
+import coil3.ImageLoader
 import com.fsck.k9.contacts.ContactPictureLoader
 import com.fsck.k9.ui.helper.RelativeDateTimeFormatter
 import com.fsck.k9.ui.messagelist.MessageListFeatureFlags.UseComposeForMessageListItems
@@ -47,6 +48,7 @@ class MessageListAdapter internal constructor(
     private val relativeDateTimeFormatter: RelativeDateTimeFormatter,
     private val themeProvider: FeatureThemeProvider,
     private val featureFlagProvider: FeatureFlagProvider,
+    private val imageLoader: ImageLoader,
 ) : RecyclerView.Adapter<MessageListViewHolder>() {
 
     val colors: MessageViewHolderColors = MessageViewHolderColors.resolveColors(theme)
@@ -271,6 +273,7 @@ class MessageListAdapter internal constructor(
             onFavouriteClick = { listItemListener.onToggleMessageFlag(it) },
             onAvatarClick = { listItemListener.onToggleMessageSelection(it) },
             appearance = appearance,
+            imageLoader = imageLoader,
         )
 
     override fun onBindViewHolder(holder: MessageListViewHolder, position: Int) {

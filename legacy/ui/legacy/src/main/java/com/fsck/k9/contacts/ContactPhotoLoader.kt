@@ -8,7 +8,7 @@ import app.k9mail.core.android.common.contact.ContactRepository
 import net.thunderbird.core.common.mail.toEmailAddressOrNull
 import net.thunderbird.core.logging.legacy.Log
 
-internal class ContactPhotoLoader(
+class ContactPhotoLoader(
     private val contentResolver: ContentResolver,
     private val contactRepository: ContactRepository,
 ) {

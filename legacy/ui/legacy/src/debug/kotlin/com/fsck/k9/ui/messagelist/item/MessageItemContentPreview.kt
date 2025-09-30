@@ -1,8 +1,10 @@
 package com.fsck.k9.ui.messagelist.item
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.PreviewLightDark
 import app.k9mail.core.ui.compose.designsystem.PreviewWithThemesLightDark
+import coil3.ImageLoader
 import com.fsck.k9.FontSizes
 import com.fsck.k9.UiDensity
 import com.fsck.k9.mail.AuthType
@@ -30,6 +32,7 @@ internal fun MessageItemContentPreview() {
             onAvatarClick = {},
             onFavouriteClick = {},
             appearance = fakeMessageListAppearance,
+            imageLoader = fakeImageLoader,
         )
     }
 }
@@ -97,3 +100,10 @@ private val fakeMessageListAppearance = MessageListAppearance(
     showAccountIndicator = true,
     density = UiDensity.Default,
 )
+
+private val fakeImageLoader: ImageLoader
+    @Composable
+    get() {
+        val context = LocalContext.current
+        return ImageLoader.Builder(context).build()
+    }
