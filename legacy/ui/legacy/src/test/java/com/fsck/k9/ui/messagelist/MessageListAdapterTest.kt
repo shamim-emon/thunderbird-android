@@ -438,6 +438,7 @@ class MessageListAdapterTest : RobolectricTest() {
             relativeDateTimeFormatter = RelativeDateTimeFormatter(context, TestClock()),
             themeProvider = FakeThemeProvider(),
             featureFlagProvider = FakeFeatureFlagProvider(),
+            imageLoader = mock(),
         )
     }
 
