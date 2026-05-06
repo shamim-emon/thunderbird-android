@@ -4,6 +4,7 @@ plugins {
 }
 
 dependencies {
+    api(projects.feature.navigation.changelog.api)
     api(projects.legacy.ui.base)
     api(projects.core.ui.account)
     api(projects.legacy.ui.folder)
