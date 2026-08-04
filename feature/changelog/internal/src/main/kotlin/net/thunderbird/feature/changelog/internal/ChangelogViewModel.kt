@@ -12,12 +12,14 @@ import net.thunderbird.core.ui.contract.mvi.BaseViewModel
 import net.thunderbird.feature.changelog.internal.ChangelogContract.Effect
 import net.thunderbird.feature.changelog.internal.ChangelogContract.Event
 import net.thunderbird.feature.changelog.internal.ChangelogContract.State
+import net.thunderbird.feature.changelog.internal.model.ChangelogRelease
 import net.thunderbird.feature.navigation.changelog.api.ChangeLogMode
 
 class ChangelogViewModel(
     private val generalSettingsManager: GeneralSettingsManager,
     private val changeLogManager: ChangeLogManager,
     private val mode: ChangeLogMode,
+    private val repository: ChangelogRepository,
 ) : BaseViewModel<State, Event, Effect>(
     initialState = State(
         releaseItems = persistentListOf(),
@@ -26,6 +28,15 @@ class ChangelogViewModel(
 ) {
     init {
         viewModelScope.launch {
+            val releases: List<ChangelogRelease> = repository.loadAllReleases()
+
+            releases.forEach { release ->
+                println("EMON1234 Version: ${release.version}")
+
+                release.notes.forEach { note ->
+                    println("- ${note.type}: ${note.text}")
+                }
+            }
             loadState()
         }
     }

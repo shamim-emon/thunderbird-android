@@ -5,6 +5,7 @@ import app.k9mail.dev.developmentModuleAdditions
 import app.k9mail.feature.featureModule
 import app.k9mail.feature.widget.shortcut.LauncherShortcutActivity
 import app.k9mail.featureflag.K9FeatureFlagFactory
+import app.k9mail.provider.K9ChangelogConfigProvider
 import app.k9mail.provider.providerModule
 import app.k9mail.widget.widgetModule
 import com.fsck.k9.AppConfig
@@ -14,6 +15,7 @@ import com.fsck.k9.activity.MessageCompose
 import com.fsck.k9.provider.UnreadWidgetProvider
 import com.fsck.k9.widget.list.MessageListWidgetProvider
 import net.thunderbird.app.common.appCommonModule
+import net.thunderbird.feature.navigation.changelog.api.ChangelogConfigProvider
 import net.thunderbird.core.common.oauth.OAuthConfigurationFactory
 import net.thunderbird.core.featureflag.FeatureFlagFactory
 import org.koin.core.qualifier.named
@@ -31,6 +33,9 @@ val appModule = module {
     single<AppConfig> { appConfig }
     single<OAuthConfigurationFactory> { K9OAuthConfigurationFactory() }
     single<FeatureFlagFactory> { K9FeatureFlagFactory() }
+    single<ChangelogConfigProvider> {
+        K9ChangelogConfigProvider()
+    }
 
     developmentModuleAdditions()
 }

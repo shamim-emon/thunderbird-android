@@ -13,6 +13,8 @@ dependencies {
     implementation(projects.core.ui.compose.common)
     implementation(projects.core.preference.api)
     implementation(projects.feature.changelog.api)
+    implementation(libs.kotlinx.serialization.json)
+    //implementation(projects.appCommon)
 
     implementation(libs.ckchangelog.core)
 }

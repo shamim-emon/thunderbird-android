@@ -147,6 +147,7 @@ def extract_release(version: str, application: str, yaml_content: dict) -> dict:
     return {
         "schemaVersion": 1,
         "version": version,
+        "versionCode": release_info["versioncode"],
         "date": release_info["release_date"],
         "notes": notes,
     }

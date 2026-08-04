@@ -9,8 +9,9 @@ import org.koin.dsl.module
 val changelogUiModule = module {
     single { ChangeLogManager(context = get(), appCoroutineScope = get(named("AppCoroutineScope"))) }
     viewModel { (mode: ChangeLogMode) ->
-        ChangelogViewModel(generalSettingsManager = get(), changeLogManager = get(), mode = mode)
+        ChangelogViewModel(generalSettingsManager = get(), changeLogManager = get(), mode = mode, repository = get())
     }
     viewModel { RecentChangesViewModel(generalSettingsManager = get(), changeLogManager = get()) }
     single<ChangelogNavigation> { DefaultChangelogNavigation() }
+    single { ChangelogRepository(context = get(), provider = get()) }
 }
